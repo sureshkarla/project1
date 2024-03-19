@@ -1,0 +1,86 @@
+<VendorLoginPage>
+    name: "VendorLoginPage"
+    MDScreen:
+        theme_bg_color: "Custom"
+        md_bg_color: self.theme_cls.backgroundColor
+
+        MDCard:
+            style: "elevated"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            padding: "4dp"
+            size_hint: None, None
+            size: "330dp", "400dp"
+            # Sets custom properties.
+            theme_shadow_color: "Custom"
+            shadow_color: "green"
+            theme_bg_color: "Custom"
+            md_bg_color: "white"
+            md_bg_color_disabled: "grey"
+            theme_shadow_offset: "Custom"
+            shadow_offset: (1, -2)
+            theme_shadow_softness: "Custom"
+            shadow_softness: 1
+            theme_elevation_level: "Custom"
+            elevation_level: 2
+
+            MDBoxLayout:
+                orientation: "vertical"
+                spacing: 20
+                padding: 50
+                MDButton:
+                    style: "text"
+                    pos_hint: {"center_x":.1, "center_y": .1}
+                    on_release:
+                        app.root.current = "Home"
+                        root.manager.transition.direction = "right"
+                    MDButtonIcon:
+                        icon: "arrow-left"
+                    MDButtonText:
+                        style: "outlined"
+                        text: "  "
+
+                MDTextField:
+                    mode: "filled"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    theme_font_size: "Custom"
+                    font_size: "18sp"
+                    MDTextFieldLeadingIcon:
+                        icon: "account"
+                    MDTextFieldHintText:
+                        text: "User Name"
+
+                MDTextField:
+                    mode: "filled"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    password: True
+                    MDTextFieldLeadingIcon:
+                        icon: "lock"
+                    MDTextFieldHintText:
+                        text: "Password"
+
+                MDButton:
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: "blue"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    MDButtonText:
+                        style: "outlined"
+                        text: "Login"
+                        theme_font_size: "Custom"
+                        font_size: "20sp"
+                        theme_text_color: "Custom"
+                        text_color: "white"
+
+                MDButton:
+                    style: "text"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    MDButtonText:
+                        style: "text"
+                        text: "Register"
+
+                MDButton:
+                    style: "text"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+                    MDButtonText:
+                        style: "text"
+                        text: "[u]Forgot password?[/u]"
